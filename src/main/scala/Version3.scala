@@ -10,7 +10,7 @@ object Version3 extends App {
     lines
   }
 
-  val poemLines = getLinesFromFile(relative_path)
+  val linestoAnlyze = getLinesFromFile(relative_path)
   //poemLines.foreach(println)  later can maybe delete
 
   def getTitlesIngr(lines: Array[String], startLine: Int, endLine: Int): Array[String] = {
@@ -19,7 +19,7 @@ object Version3 extends App {
     recipeTitlesIngredients
   }
 
-  val recipeTitlesIngredients = getTitlesIngr(poemLines, 1310, 3446).mkString(sep = "\n\r")
+  val recipeTitlesIngredients = getTitlesIngr(linestoAnlyze, 1310, 3446).mkString(sep = "\n\r")
   recipeTitlesIngredients.foreach(println)
 
     //saving the new file
@@ -32,4 +32,3 @@ object Version3 extends App {
 
 }
 
-//TODO need to check if got all the recipes
