@@ -13,13 +13,13 @@ object Version3 extends App {
   val poemLines = getLinesFromFile(relative_path)
   //poemLines.foreach(println)  later can maybe delete
 
-  def getTitles(lines: Array[String], startLine: Int, endLine: Int): Array[String] = {
+  def getTitlesIngr(lines: Array[String], startLine: Int, endLine: Int): Array[String] = {
     val inLines = lines.slice(startLine, endLine)
     val recipeTitlesIngredients = inLines.filter(line => line.toUpperCase == line && line.nonEmpty || line.startsWith("  ") || line.trim.startsWith("_"))
     recipeTitlesIngredients
   }
 
-  val recipeTitlesIngredients = getTitles(poemLines, 1310, 3446).mkString(sep = "\n\r")
+  val recipeTitlesIngredients = getTitlesIngr(poemLines, 1310, 3446).mkString(sep = "\n\r")
   recipeTitlesIngredients.foreach(println)
 
     //saving the new file
